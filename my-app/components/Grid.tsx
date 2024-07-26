@@ -10,7 +10,7 @@ import "swiper/css/pagination";
 const Grid = () => {
   return (
     <section id="about">
-      <BentoGrid className="w-full py-20">
+      <BentoGrid className="w-full">
         {writtenItem.map((item) => (
           <BentoGridItem
             key={item.id}

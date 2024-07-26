@@ -126,7 +126,7 @@ export const writtenItem = [
   {
     id: 3,
     title: "About me",
-    desc: "As mentioned in the box above, I'm Omm. I'm an aspiring software engineer in my 3rd year, studying Computer Science at the Univerisity of Surrey. I'm from the South East of London, and have been studying Computer Science throughout my years in academia. Whilst learning, I've been able to further develop and refine my abstraction skills within a programming setting.",
+    desc: "As mentioned in the box above, I'm Omm. I'm an aspiring software engineer in my 3rd year, studying Computer Science at the Univerisity of Surrey. I'm from the South East of London, and have been studying Computer Science throughout my years in academia. \n\nWhilst learning, I've been able to further develop and refine my abstraction skills within a programming setting. As a result of this, I have been able to gain experience in both procedural and object oriented projects.",
     className: "sm:col-span-full md:col-span-1",
     img: "/IRL pfp.png",
     classNameImg: "w-32 h-32",

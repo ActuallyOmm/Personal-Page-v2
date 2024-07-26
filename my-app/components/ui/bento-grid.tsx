@@ -55,12 +55,13 @@ export const BentoGridItem = ({
     return items.map((item, index) => (
       <ButtonsCard
         key={index}
-        className="h-6 w-auto  animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
+        className="h-6 w-auto animate-none items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
       >
         {item}
       </ButtonsCard>
     ));
   };
+
   return (
     <div
       className={cn(
@@ -84,7 +85,8 @@ export const BentoGridItem = ({
           />
         </div>
       )}
-      <div className="group-hover/bento:translate-x-2 transition duration-200">
+      {/* For animation {group-hover/bento:translate-x-2 transition duration-200} */}
+      <div className="">
         {title && title !== "" && (
           <div className="font-sans font-bold text-neutral-600 dark:text-neutral-200 mb-2 mt-2">
             {title}
