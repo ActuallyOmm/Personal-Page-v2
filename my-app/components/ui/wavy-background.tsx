@@ -13,7 +13,7 @@ export const WavyBackground = ({
   blur = 10,
   speed = "slow",
   waveOpacity = 0.5,
-  lineThickness = 12, // Default line thickness
+  lineThickness = 1, // Default line thickness
   ...props
 }: {
   children?: any;
