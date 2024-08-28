@@ -28,19 +28,21 @@ export const BentoGrid = ({
   );
 };
 
+export interface BentoGridItemProps {
+  className?: string;
+  title?: string | React.ReactNode;
+  description?: string | React.ReactNode;
+  img?: string;
+  imgClassName?: string;
+}
+
 export const BentoGridItem = ({
   className,
   title,
   description,
   img,
   imgClassName,
-}: {
-  className?: string;
-  title?: string | React.ReactNode;
-  description?: string | string[] | React.ReactNode;
-  img?: string;
-  imgClassName?: string;
-}) => {
+}: BentoGridItemProps) => {
   // Utility function to convert \n to <br />
   const convertNewlinesToBreaks = (text: string) => {
     return text.split("\n").map((line, index) => (
@@ -50,7 +52,6 @@ export const BentoGridItem = ({
       </React.Fragment>
     ));
   };
-
   const convertArrayToButton = (items: string[]) => {
     return items.map((item, index) => (
       <ButtonsCard
@@ -65,7 +66,7 @@ export const BentoGridItem = ({
   return (
     <div
       className={cn(
-        "rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none p-4 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent justify-between",
+        "rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none p-4  dark:bg-black dark:border-white/[0.2] bg-white border border-transparent justify-between",
         className
       )}
     >
@@ -78,10 +79,11 @@ export const BentoGridItem = ({
         >
           <Image
             src={img}
-            layout="fill"
-            objectFit="cover"
+            fill
             alt="Bento item image"
-            className={cn(" flex justify-center items-center rounded-xl")}
+            className={cn(
+              " flex justify-center items-center rounded-xl object-cover"
+            )}
           />
         </div>
       )}
@@ -133,6 +135,73 @@ export const BentoGridItem = ({
               </Swiper>
             </div>
           ) : null}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+interface ExtendedBentoGridItemProps extends BentoGridItemProps {
+  skills?: string[];
+}
+
+interface ExtendedBentoGridItemProps extends BentoGridItemProps {
+  skills?: string[];
+}
+
+export const ExtendedBentoGridItem = ({
+  className,
+  title,
+  description,
+  skills,
+}: ExtendedBentoGridItemProps) => {
+  const convertNewlinesToBreaks = (text: string) => {
+    return text.split("\n").map((line, index) => (
+      <React.Fragment key={index}>
+        {line}
+        <br />
+      </React.Fragment>
+    ));
+  };
+
+  const convertArrayToString = (arr: string[]) => {
+    return `Skills: ${arr.join(", ")}`;
+  };
+
+  return (
+    <div
+      className={cn(
+        "rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none p-4 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent justify-between",
+        className
+      )}
+    >
+      <div className={cn("flex justify-center items-center w-20 h-28")}>
+        <Image
+          src={"/UoS.png"}
+          alt="Bento item image"
+          width={112} // Set the width directly
+          height={112} // Set the height directly
+          className={cn(
+            "rounded-xl object-right-top justify-center items-center"
+          )}
+        />
+      </div>
+
+      {/* For animation {group-hover/bento:translate-x-2 transition duration-200} */}
+      <div className="">
+        {title && title !== "" && (
+          <div className="font-sans font-bold text-neutral-600 dark:text-neutral-200 mb-2 mt-2">
+            {title}
+          </div>
+        )}
+        <div className="font-sans font-normal text-neutral-600 text-xs dark:text-neutral-300 ">
+          {typeof description === "string"
+            ? convertNewlinesToBreaks(description)
+            : null}
+        </div>
+        <br></br>
+        <div className="font-sans font-normal text-neutral-600 text-xs dark:text-neutral-300 ">
+          {Array.isArray(skills) ? convertArrayToString(skills) : null}
         </div>
       </div>
     </div>

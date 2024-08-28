@@ -12,8 +12,8 @@ export const WavyBackground = ({
   backgroundFill,
   blur = 10,
   speed = "slow",
-  waveOpacity = 0.5,
-  lineThickness = 1, // Default line thickness
+  waveOpacity = 0.05,
+  lineThickness = 12, // Default line thickness
   ...props
 }: {
   children?: any;
@@ -112,9 +112,13 @@ export const WavyBackground = ({
   }, []);
 
   return (
-    <div className={cn("flex flex-col items-center justify-center relative pt-16 -z-10 h-4")}>
+    <div
+      className={cn(
+        "flex flex-col items-center justify-center relative pt-16 -z-10 "
+      )}
+    >
       <canvas
-        className="absolute "
+        className="absolute pt-16"
         ref={canvasRef}
         id="canvas"
         style={{

@@ -1,7 +1,11 @@
-export const gridItems = [
-  { id: 1, title: "title1", description: "desc1" },
-  { id: 1, title: "title1", description: "desc1" },
-  { id: 1, title: "title1", description: "desc1" },
+export const projectsGrid = [
+  {
+    id: 1,
+    title: "My Projects",
+    description:
+      "Here you can see a list of all the projects and courseworks I've completed so far, throughout my acedemic journey.",
+    className: "md:col-span-full justify-center items-center",
+  },
 ];
 
 export const projectItem = [
@@ -93,8 +97,8 @@ export const writtenItem = [
   {
     id: 1,
     title: "Welcome!",
-    desc: "Hi! My name is Omm. I am currently a third year Computer Science Student, studying at the University of Surrey. \n I'd like to welcome you to my personal portfolio website designed using NextJS. Have a look around to see my most recent work! Apologies for any bugs, still a work in progress ",
-    className: "md:col-span-full justify-center items-center",
+    desc: "Hi! My name is Omm. I am currently a third year Computer Science Student, studying at the University of Surrey. \n I'd like to welcome you to my personal portfolio website designed using NextJS (TypeScript). \n Please have a look around to see my most recent work! \n Apologies for any bugs, it's still a work in progress :D",
+    className: "md:col-span-full justify-center items-center ",
     img: "/pfp.jpg",
     classNameImg: "w-32 h-32",
   },
@@ -151,6 +155,7 @@ export const projectTile = [
     desc: null,
   },
 ];
+
 export const swiperItem = [
   {
     id: 1,
